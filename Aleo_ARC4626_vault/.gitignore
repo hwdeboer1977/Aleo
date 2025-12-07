@@ -1,0 +1,19 @@
+# Environment
+.env9
+
+# Build artifacts
+build/
+outputs/
+
+# Aleo
+*.prover
+*.verifier
+*.avm
+ledger-*
+.ledger*
+.log*
+.current-proposal-cache-*
+
+# Logs
+logs-*/
+*.log

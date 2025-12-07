@@ -1,0 +1,25 @@
+# Environment
+*.env
+.env*
+
+# Build artifacts
+build/
+outputs/
+
+# Aleo
+*.prover
+*.verifier
+*.avm
+ledger-*
+.ledger*
+.log*
+.current-proposal-cache-*
+
+# Logs
+logs-*/
+*.log
+
+# Projects to ignore
+helloworld*
+aid_core_contract
+ngo-backend

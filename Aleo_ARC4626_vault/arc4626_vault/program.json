@@ -1,0 +1,18 @@
+{
+    "program": "arc4626_vault.aleo",
+    "version": "0.1.0",
+    "description": "ARC-4626 Vault using mock_usdc_ok as underlying",
+    "license": "MIT",
+    "leo": "3.3.1",
+    "network": "testnet",
+    "dependencies": [
+        {
+            "name": "mock_usdc.aleo",
+            "location": "network",
+            "network": "testnet",
+            "path": null,
+            "edition": null
+        }
+    ],
+    "dev_dependencies": null
+}
