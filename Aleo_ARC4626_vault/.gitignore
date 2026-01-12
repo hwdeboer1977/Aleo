@@ -1,5 +1,7 @@
 # Environment
 .env9
+*.env*
+*docs*
 
 # Build artifacts
 build/
