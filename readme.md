@@ -13,6 +13,10 @@ Used for experimenting with private yield-bearing vaults, deposit/withdraw flows
 A zero-knowledge proof prototype demonstrating private eligibility proofs and privacy-preserving verification flows.  
 Part of a broader exploration into social impact and identity applications on Aleo.
 
+### **leo-wallet-connect/**
+A minimal React + TypeScript frontend demonstrating Leo Wallet integration on Aleo.  
+Features network selection (Mainnet/Testnet), connect/disconnect flow, and serves as a starting point for building Aleo dApps. Includes documentation on early-stage tooling quirks and workarounds.
+
 ## 🎯 Purpose
 The goal of this monorepo is to provide:
 - A clean, public overview of my Aleo development work  
@@ -23,6 +27,7 @@ The goal of this monorepo is to provide:
 - **Aleo / Leo**  
 - **Zero-knowledge circuits**  
 - **Private state transitions**  
+- **React / TypeScript** (for frontend integrations)
 - **CLI tools & scripts**
 
 ## 📄 License

@@ -232,3 +232,135 @@ code {
   border-radius: 4px;
   font-size: 13px;
 }
+
+/* Transaction Section */
+.tx-section {
+  margin-top: 32px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.tx-section h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.tx-subtitle {
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.tx-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.tx-input:focus {
+  outline: none;
+  border-color: #00d4aa;
+}
+
+.tx-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.tx-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.tx-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 212, 170, 0.3);
+}
+
+.tx-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tx-error {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 100, 100, 0.1);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  border-radius: 8px;
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
+.tx-result {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(0, 212, 170, 0.1);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  border-radius: 8px;
+}
+
+.tx-id {
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.tx-id code {
+  display: block;
+  margin-top: 4px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.tx-status {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.status-btn {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(0, 212, 170, 0.5);
+  border-radius: 6px;
+  color: #00d4aa;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-btn:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
