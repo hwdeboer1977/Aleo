@@ -13,9 +13,16 @@ Used for experimenting with private yield-bearing vaults, deposit/withdraw flows
 A zero-knowledge proof prototype demonstrating private eligibility proofs and privacy-preserving verification flows.  
 Part of a broader exploration into social impact and identity applications on Aleo.
 
-### **leo-wallet-connect/**
+### **aleo-leo-wallet/**
 A minimal React + TypeScript frontend demonstrating Leo Wallet integration on Aleo.  
 Features network selection (Mainnet/Testnet), connect/disconnect flow, and serves as a starting point for building Aleo dApps. Includes documentation on early-stage tooling quirks and workarounds.
+
+### **aleo-multisig/**
+A working deployment and test of the [AleoNet Aleo Modular Multisig System](https://github.com/AleoNet/aleo-multisig).  
+Includes a complete setup guide covering local devnet deployment, wallet creation, the 3-phase signing flow (init → sign → execute), fund transfers, and admin operations (threshold changes, adding/removing signers). Supports both Aleo and ECDSA (Ethereum) signers with configurable M-of-N thresholds.
+
+### **aleo-shield-wallet/**
+Shield wallet integration and experimentation for Aleo.
 
 ## 🎯 Purpose
 The goal of this monorepo is to provide:
