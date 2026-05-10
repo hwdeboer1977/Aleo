@@ -24,6 +24,21 @@ Includes a complete setup guide covering local devnet deployment, wallet creatio
 ### **aleo-shield-wallet/**
 Shield wallet integration and experimentation for Aleo.
 
+### **batch-private-payments/**
+A batch payment program for distributing funds to multiple recipients in a single transaction flow.  
+Useful as a building block for payroll-style disbursements, airdrops, or NGO-style aid distribution where many beneficiaries need to be paid efficiently while preserving privacy.
+
+### **example-autojoin/**
+A worked example demonstrating the auto-join pattern for Aleo records — automatically combining (joining) multiple input records of the same token to cover a target amount.  
+Useful reference for any program that needs to handle record fragmentation, since Aleo's UTXO-style record model often requires consolidating balances before spending.
+
+### **oracle_leo/**
+A Leo-based oracle prototype for bringing off-chain data on-chain in a verifiable way.  
+Experimental groundwork for price feeds, attestations, or other external data sources needed by Aleo programs.
+
+### **usdcx_private/**
+Experiments with `usdcx` (private USDC-style stablecoin) on Aleo, including private balance flows, transfers, and integration patterns with other programs in this monorepo.
+
 ## 🎯 Purpose
 The goal of this monorepo is to provide:
 - A clean, public overview of my Aleo development work  
