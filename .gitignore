@@ -5,6 +5,7 @@
 # Build artifacts
 build/
 outputs/
+*node_modules/
 
 # Aleo
 *.prover
@@ -23,3 +24,4 @@ logs-*/
 helloworld*
 aid_core_contract
 ngo-backend
+bulk_*

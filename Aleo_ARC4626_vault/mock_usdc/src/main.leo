@@ -18,7 +18,7 @@
 
 // Check: curl "http://localhost:3030/testnet/program/mock_usdc.aleo/mapping/balances/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px"
 
-program mock_usdc.aleo {
+program mock_usdc_t.aleo {
 
     // ──────────────────────────────────────────────
     //  Constants

@@ -1,0 +1,54 @@
+# First get a JWT token
+JWT=$(curl -s -X POST https://api.provable.com/v1/auth/jwt \
+  -H "Content-Type: application/json" \
+  -d "{\"api_key\": \"odH9KYok2h7mSRnBvG1Dpm9EbaIBvJX0\", \"consumer_id\": \"d329bd94-8914-4bdb-9d93-158226ac3326\"}" \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('token','') or d.get('jwt',''))")
+
+echo "JWT: $JWT"
+
+# Then scan for records
+curl -s -X POST "https://api.provable.com/v1/scanner/testnet/records/owned" \
+  -H "Authorization: Bearer $JWT" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"view_key\": \"AViewKey1is8iPit9ftsVVkxPe5AAXWbSXbTWCkPRVZZ7v1PAjBFE\",
+    \"decrypt\": true,
+    \"unspent\": true,
+    \"filter\": {\"program_name\": \"test_usdcx_stablecoin.aleo\"}
+  }" | python3 -m json.tool
+
+
+  for record in \
+  "record1qvqsqhpnfet94ups9ez7k7dc3q0maxg9ucjf72lp5ct7acak7qcv9xg8qvrxzmt0w4h8ggcqqgqsqzrhnlkwtyah357ee65mq0trkypprdcxdvvg2qp590ctjxppvkqgqeek2mnyv4eyxqqzqgq9k0s8l85l93ek2szmd24d4lg8h7hlhw87cfjghuwnuwtdn083xqfahney7fzl9pmc0aed0ca4vl4k3vw9nuvq58puxsu4qjs3wr7uzqyhyetrd9cxjetww3psqqszqrfs459fujrwqevjnhw0j7w2tu9l6jpe0848d6hvxp2uhgd3r43sdt9x7wdxp2cpj4guvwdfmd24yqsxq4zyglhctkd4pp6hqfphn3q8z6e7vcvkq8tscruvmvwpyfnvp5e65fc68tu0xqy5j44fx23y4szsdf6z8s" \
+  "record1qvqsq8a3r7al4p4z9uglyljz598m6rr7wgx7cx25k9enxnkzwpn9q2qpqyrxzmt0w4h8ggcqqgqspj3z0xkkw2y0crgffuesg3lqz3jz0c6d7e3gmumdefavnat097c3r3xtuttvyc45fcv3kgp0z38j2ahkr5x5mjtswvs3cagx8p5vyg9qy3xffw" \
+  "record1qvqsq88mefq82v2anlqmjwypvvv8sp2assdwehzpxtkrn2vjq9gfklcvqyrxzmt0w4h8ggcqqgqsqlamtya7hg5nl3q9z8v64usw6vv279cznc2kfjumgz6g25drqlcgjmg6c8kneu4c0l0tdv34cgwg9tcwgucsaxrxwu34q9jpa5yh0c9q2czkx5"
+do
+  echo "==="
+  snarkos developer decrypt \
+    --view-key AViewKey1qAegjKPwGbLdMMJxmoiopab9hKnoZbb5GZSV2YDpaF6J \
+    --ciphertext "$record" 2>&1 | grep -v "new version"
+done
+
+
+snarkos developer execute test_usdcx_stablecoin.aleo transfer_public_to_private \
+  "aleo1d9es6d8kuzg65dlfdpx9zxchcsarh8k0hwxfx5eg6k4w7ew6gs8sv5aza0" \
+  "1u128" \
+  --private-key APrivateKey1zkpEbqY26FkmKfsEoSDkWCHBoHumuyMdKFZANWZpqWGpDsV \
+  --query "https://api.explorer.provable.com/v1" \
+  --broadcast "https://api.explorer.provable.com/v1/testnet/transaction/broadcast" \
+  --network 1
+  
+
+curl -X POST https://api.explorer.provable.com/v1/testnet/scanner/records/owned \
+  -H "Content-Type: application/json" \
+  -d '{
+    "private_key": "APrivateKey1zkpEbqY26FkmKfsEoSDkWCHBoHumuyMdKFZANWZpqWGpDsV",
+    "programs": ["test_usdcx_stablecoin.aleo"],
+    "record_types": ["Token"]
+  }'
+
+snarkos developer decrypt \
+  --ciphertext record1qvqspcrgdle6xgk2l5curc72623v8r468vyrpe9kafamq8vgf2uuv2szqyrxzmt0w4h8ggcqqgqspszp68rju8zsqsmnw9cnksqucxlaa3wl2hdwupcmtecmq3u3vlsd7j6a6nkunjldmy6uyve2j44laqk3p8qzjvwfgdeaunw3p9pjeurs5tsxzf \
+  --view-key AViewKey1is8iPit9ftsVVkxPe5AAXWbSXbTWCkPRVZZ7v1PAjBFE \
+  --network 1
+
